@@ -1,6 +1,7 @@
-import 'package:e_commerce/core/api/api_service.dart';
 import 'package:e_commerce/featured/home/home_view.dart';
+import 'package:e_commerce/logic/cubit/product_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomeView(),
+      home: BlocProvider(
+        create: (context) => ProductCubit()..ApiService(),
+        child: HomeView(),
+      ),
     );
   }
 }
