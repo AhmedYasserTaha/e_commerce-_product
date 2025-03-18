@@ -1,13 +1,13 @@
 import 'package:e_commerce/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
-class ProductContainer extends StatelessWidget {
-  const ProductContainer({super.key});
+class ProductContainerWidget extends StatelessWidget {
+  const ProductContainerWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width,
+      width: MediaQuery.of(context).size.width * 0.95,
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: AppColors.kblue,

@@ -1,7 +1,15 @@
-// import 'package:api_test/data/model/product_model.dart';
-// import 'package:bloc/bloc.dart';
-// import 'package:dio/dio.dart';
-// import 'package:flutter/material.dart';
+import 'dart:developer';
+
+import 'package:dio/dio.dart';
+
+// ignore: non_constant_identifier_names
+ApiService() async {
+  final Dio dio = Dio();
+  final Response response = await dio.get('https://dummyjson.com/products');
+  final dynamic data = response.data;
+  // log(response.toString());
+}
+
 
 // part 'product_state.dart';
 
@@ -19,14 +27,3 @@
 //         products: prodact)); // log(response.statusCode.toString());
 //   }
 // }
-
-import 'dart:developer';
-
-import 'package:dio/dio.dart';
-
-ApiService() async {
-  final Dio dio = Dio();
-  final Response response = await dio.get('https://dummyjson.com/products');
-  final dynamic data = response.data;
-  log(response.toString());
-}
