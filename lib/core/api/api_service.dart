@@ -2,13 +2,13 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 
-// ignore: non_constant_identifier_names
-ApiService() async {
-  final Dio dio = Dio();
-  final Response response = await dio.get('https://dummyjson.com/products');
-  final dynamic data = response.data;
-  // log(response.toString());
-}
+// // ignore: non_constant_identifier_names
+// ApiService() async {
+//   final Dio dio = Dio();
+//   final Response response = await dio.get('https://dummyjson.com/products');
+//   final dynamic data = response.data;
+//   // log(response.toString());
+// }
 
 
 // part 'product_state.dart';
