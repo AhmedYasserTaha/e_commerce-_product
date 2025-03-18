@@ -1,8 +1,10 @@
+import 'package:e_commerce/core/api/api_service.dart';
 import 'package:e_commerce/featured/home/home_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
+  ApiService();
 }
 
 class MyApp extends StatelessWidget {
