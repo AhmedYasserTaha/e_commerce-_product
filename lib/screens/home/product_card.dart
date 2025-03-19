@@ -2,8 +2,8 @@ import 'package:e_commerce/utils/style.dart';
 import 'package:flutter/material.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({super.key, this.product});
-  final dynamic product;
+  const ProductCard({super.key, this.productMap});
+  final dynamic productMap;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,27 +14,34 @@ class ProductCard extends StatelessWidget {
         color: Colors.brown,
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset(
-            "images/1.png",
+          Image.network(
+            productMap['thumbnail'],
             height: 100,
             width: 100,
           ),
           Text(
-            "title",
-            style: Styles.textStyle18,
+            textAlign: TextAlign.center,
+            maxLines: 2,
+            productMap['title'],
+            style: Styles.textStyle16,
           ),
           Text(
-            "prand",
-            style: Styles.textStyle18,
+            textAlign: TextAlign.center,
+            maxLines: 2,
+            productMap['category'],
+            style: Styles.textStyle14,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
+            padding: const EdgeInsets.only(left: 15, right: 15, top: 20),
             child: Row(
               children: [
                 Text(
-                  "price",
-                  style: Styles.textStyle18,
+                  productMap['price'].toString(),
+                  style: Styles.textStyle16.copyWith(
+                    color: Colors.green,
+                  ),
                 ),
                 Spacer(),
                 Icon(
@@ -42,10 +49,8 @@ class ProductCard extends StatelessWidget {
                   color: Colors.amberAccent,
                 ),
                 SizedBox(width: 5),
-                Text(
-                  "rating",
-                  style: Styles.textStyle18,
-                ),
+                Text(productMap['rating'].toString(),
+                    style: Styles.textStyle16),
               ],
             ),
           )

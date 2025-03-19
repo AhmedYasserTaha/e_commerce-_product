@@ -7,7 +7,7 @@ class ProductsModel {
   double? discountPercentage;
   double? rating;
   int? stock;
-  List<String>? tags;
+  List<dynamic>? tags;
   String? brand;
   String? sku;
   int? weight;
@@ -60,32 +60,5 @@ class ProductsModel {
     minimumOrderQuantity = json['minimumOrderQuantity'];
     images = json['images'].cast<String>();
     thumbnail = json['thumbnail'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['title'] = this.title;
-    data['description'] = this.description;
-    data['category'] = this.category;
-    data['price'] = this.price;
-    data['discountPercentage'] = this.discountPercentage;
-    data['rating'] = this.rating;
-    data['stock'] = this.stock;
-    data['tags'] = this.tags;
-    data['brand'] = this.brand;
-    data['sku'] = this.sku;
-    data['weight'] = this.weight;
-
-    data['warrantyInformation'] = this.warrantyInformation;
-    data['shippingInformation'] = this.shippingInformation;
-    data['availabilityStatus'] = this.availabilityStatus;
-
-    data['returnPolicy'] = this.returnPolicy;
-    data['minimumOrderQuantity'] = this.minimumOrderQuantity;
-
-    data['images'] = this.images;
-    data['thumbnail'] = this.thumbnail;
-    return data;
   }
 }
